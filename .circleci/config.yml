@@ -7,6 +7,7 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.6.4-node
+      - image: cypress/base:8
     steps:
       - checkout
       - run:
@@ -14,4 +15,4 @@ jobs:
           command: npm install
       - run:
           name: run test
-          command: ./node_modules/.bin/cypress run
+          command: $(npm bin)/cypress run
