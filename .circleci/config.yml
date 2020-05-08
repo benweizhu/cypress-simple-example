@@ -8,6 +8,8 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.4-node
       - image: benweizhu/my-node-image
+          volumes:
+            - ./index.js:/usr/app/index.js
     steps:
       - checkout
       - run:
